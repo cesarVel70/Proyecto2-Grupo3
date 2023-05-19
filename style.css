@@ -1,0 +1,47 @@
+*/{
+    margin: 0;
+    padding: 0;
+  }
+
+  :root {
+    --background-color-negrito:#000000;
+    --background-color-rolling: #c10000;
+
+  }
+  .container-fluid {
+    background-color: var(--background-color-negrito);
+  }
+  /*INICIO NAVBAR*/
+  .img-logo {
+    width: 200px;
+    height: 48.27px;
+  }
+  .color-suscripcion{
+    color: #89c9f2;
+  }
+  .color-suscripcion:hover{
+    color: #34a5ec;
+  }
+  /*FIN NAVBAR*/
+
+     /*INICIO FOOTER*/
+     .footer{
+        background-color: gray;
+        color:white;
+        padding: 10px 0px;
+      }
+      .img-logo-redes{
+        width: 50px;
+      }
+      .footer_items{
+        text-decoration: none;
+        color:white;
+      }
+      .footer_items:hover{
+        color:gray
+      }
+      .footer .row{
+        min-height: 100px;
+        text-align: center;
+      }
+      /*FIN FOOTER*/
