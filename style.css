@@ -4,7 +4,7 @@
   }
 
   :root {
-    --background-color-negrito:#000000;
+    --background-color-negrito:#212429;
     --background-color-rolling: #c10000;
 
   }
@@ -26,7 +26,7 @@
 
      /*INICIO FOOTER*/
      .footer{
-        background-color: gray;
+        background-color: #212429;
         color:white;
         padding: 10px 0px;
       }
