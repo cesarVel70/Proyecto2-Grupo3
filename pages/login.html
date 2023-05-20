@@ -1,29 +1,39 @@
 <!DOCTYPE html>
 <html lang="es" data-bs-theme="dark">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Rollig Games es una plataforma donde podés encontrar los mejores videjuegos del mercado">
-    <meta name="author" content="Los gamers">
-        <!--Metadatos para los estilos bootstrap y CSS-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-
-     <!--Metadatos para el icono-->
-     <link
-     rel="shortcut icon"
-     href="../assets/imagenes/favicon.png"
-     type="image/x-icon"
-   />
-    <link rel="stylesheet" href="../style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Rollig Games es una plataforma donde podés encontrar los mejores videjuegos del mercado"
+    />
+    <meta name="author" content="Los gamers" />
+    <!--Metadatos para los estilos bootstrap y CSS-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <!--Metadatos para el icono-->
+    <link
+      rel="shortcut icon"
+      href="../assets/imagenes/favicon.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="css/index" />
     <title>Login</title>
-    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/login.css" /
     <!--INICIO LINK BOOSTRAP CSS-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <!--FIN LINK BOOSTRAP CSS-->
-
-</head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+  </head>
 
 <body>
     <header class="sticky-top">
@@ -69,7 +79,47 @@
         </nav>
       </header>
     <main>
-        
+        <section class="vh-100" style="background: rgb(11,11,19);
+        background: linear-gradient(180deg, rgba(11,11,19,1) 0%, rgba(0,0,5,1) 34%, rgba(78,78,103,1) 100%, rgba(0,212,255,1) 100%);">
+            <div class="container h-100">
+              <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col col-xl-10">
+                  <div class="card" style="border-radius: 1rem;">
+                    <div class="row g-0">
+                      <div class="col-md-6 col-lg-5 d-none d-md-block">
+                        <img src="../assets/imagenes/login/wallpaper-login.jpg" alt="wallpaper-login" class="img-fluid" style="border-radius: 1rem 0 0 1rem; height: 100%;" />
+                      </div>
+                      <div class="col-md-6 col-lg-7 d-flex align-items-center">
+                        <div class="card-body p-4 p-lg-5 text-black">
+          
+                          <form>
+                            <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Inicia sesión en tu cuenta</h5>
+          
+                            <div class="form-outline mb-4">
+                              <input type="email" id="correo" class="form-control form-control-lg" placeholder="Correo electrónico" required />
+                            </div>
+          
+                            <div class="form-outline mb-4">
+                              <input type="password" id="clave" class="form-control form-control-lg" placeholder="Contraseña" required/>
+                            </div>
+          
+                            <div class="pt-1 mb-4">
+                              <button type="submit" class="btn btn-success btn-lg btn-block w-100">Iniciar sesión</button>
+                            </div>
+          
+                            <p class="small text-white">¿Olvidó su contraseña? <a href="#!" class=" text-white">Click aquí para recuperarla</a></p>
+                            
+                            <p class="mb-5 pb-lg-2" style="color: #8990e2;">¿No tienes una cuenta? <a href="./registro.html" style="color: #8990e2;">Regístrese aquí</a></p>
+                          </form>
+          
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
     </main>
     <footer class="footer">
         <div class="container">
