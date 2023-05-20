@@ -8,34 +8,94 @@
     <meta name="author" content="Los gamers">
         <!--Metadatos para los estilos bootstrap y CSS-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+
      <!--Metadatos para el icono-->
      <link
      rel="shortcut icon"
      href="../assets/imagenes/favicon.png"
      type="image/x-icon"
    />
-    <link rel="stylesheet" href="css/index">
+    <link rel="stylesheet" href="../style.css">
     <title>Registrarse</title>
     <link rel="stylesheet" href="../css/registro.css">
 
-    <!--INICIO LINK BOOSTRAP CSS-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <!--FIN LINK BOOSTRAP CSS-->
+     <!--INICIO LINK BOOSTRAP CSS-->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+     integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+ <!--FIN LINK BOOSTRAP CSS-->
 
 </head>
 
 <body>
-    <main>
-        
-    </main>
-    <footer></footer>
-    <!--INICIO LINK BOOSTRAP JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-        crossorigin="anonymous"></script>
- <!--FIN LINK BOOSTRAP CSS-->
+ <header class="sticky-top">
+     <!--Navbar-->
+     <nav 
+      class="navbar navbar-expand-lg navbar-dark" 
+      style="background-color: var(--background-color-negrito);">
+       <div class="container">
+         <a class="navbar-brand d-flex align-items-center gap-2" href="#"> <img src="../assets/imagenes/logo.png" alt="logo" class="img-logo" ></a>
+         <button
+           class="navbar-toggler"
+           type="button"
+           data-bs-toggle="collapse"
+           data-bs-target="#navbarNav"
+           aria-controls="navbarNav"
+           aria-expanded="false"
+           aria-label="Toggle navigation"
+         >
+           <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarNav">
+           <ul class="navbar-nav ms-auto">
+             <li class="nav-item">
+             <a class="nav-link" href="../index.html">Inicio |</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" href="../pages/contacto.html">Contacto |</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" href="./acerca.html">Acerca de nosotros |</a>
+             </li>
+             <!--el link a la página login es con Ingresar-->
+             <li class="nav-item">
+               <a class="nav-link" href="./login.html">Ingresar |</a>
+             </li>
+              <!--el link a la página registro es con Registrarse-->
+              <li class="nav-item">
+                 <a class="nav-link" href="./registro.html">Registrarse</a>
+               </li>
+           </ul>
+         </div>
+       </div>
+     </nav>
+   </header>
+ <main>
+     
+ </main>
+ <footer class="footer">
+     <div class="container">
+       <div class="row align-items-center w-100 justify-contentt-space-bettween  ">
+<!--Todos los derechos reservados-->
+         <div class="col-12 col-md-6 col-lg-6">
+             <p class="text-justify">© Copyright 2023 RollingCode School <br>Todos los derechos reservados</p>
+         </div>
+<!--REDES SOCIALES-->
+         <div class="col-12 col-md-6 col-lg-6">
+           <h4 class="footer_title text-center">Redes sociales:</h4>
+           <div class="w-100 d-flex justify-content-center gap-2">
+         <a href="../pages/error404.html"><img src="../assets/imagenes/logos redes sociales/instagram.png" alt="instagram" class="img-logo-redes"></a>
+           <a href="../pages/error404.html"><img src="../assets/imagenes/logos redes sociales/facebook.png" alt="facebook" class="img-logo-redes"></a>
+           <a href="../pages/error404.html"><img src="../assets/imagenes/logos redes sociales/youtube.png" alt="youtube" class="img-logo-redes"></a>
+           </div>
+         </div>         
+       </div>
+     </div>
+ 
+   </footer>
+
+ <!--script para el js de bootstrap-->
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+ <!--FIN LINK BOOSTRAP JS-->
  <script src="../app.js" type="text/javascript"></script>
  <script src="../js/registro.js" type="text/javascript"></script>
  </body>
