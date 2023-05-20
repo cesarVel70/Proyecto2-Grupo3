@@ -35,9 +35,18 @@
       crossorigin="anonymous"
     />
     <!--FIN LINK BOOSTRAP CSS-->
+
+    <!-- Fuente -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Fin fuente -->
   </head>
 
-  <body>
+  <body style="font-family: 'Montserrat', sans-serif; line-height: 17px;">
     <header class="sticky-top">
       <!--Navbar-->
       <nav
@@ -138,12 +147,15 @@
                         </div>
 
                         <div class="form-outline mb-4">
-                          <input
-                            type="password"
-                            id="confirmar-clave"
-                            class="form-control form-control-lg"
-                            placeholder="Confirmar Contraseña"
-                          />
+                          <div class="validacion">
+                            <input
+                              type="password"
+                              id="confirmar-clave"
+                              class="form-control form-control-lg"
+                              placeholder="Confirmar Contraseña"
+                            />
+                            <small></small>
+                          </div>
                         </div>
 
                         <div class="pt-1 mb-4">

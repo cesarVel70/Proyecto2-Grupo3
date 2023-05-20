@@ -1,15 +1,22 @@
+body {
+      font-family: 'Montserrat', sans-serif;
+}
+
 .validacion.error {
       border: 1px solid #dc3545;
       border-radius: 10px;
-      height: 50px
+      height: 50px;
+      margin-bottom: 45px;
 }
 
 .validacion small {
       color: #dc3545;
+      position: relative;
+      top: 2px;
 }
-
 
 .validacion.correcto {
       border: 1px solid #28a745;
-
+      border-radius: 10px;
+      height: 50px;
 }

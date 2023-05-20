@@ -9,9 +9,34 @@ const verificarContrasenia = () => {
   if (!estaVacia(claveValor)) {
     mostrarError(clave, "La clave es obligatoria");
   } else if (!contraseniaValida(claveValor)) {
-    mostrarError(clave, "La clave debe contener mínimo 8 carácteres");
+    mostrarError(
+      clave,
+      "La contraseña debe tener al menos 8 caracteres, una mayuscula, una minuscula, y números"
+    );
+  } else {
+      mostrarCorrecto(clave)
+      valid = true;
   }
 };
+
+const esIgualAContrasenia = () => {
+       let validado = false;
+       const claveValor = clave.value.trim();
+       const confirmarClaveValor = confirmarClave.value.trim()
+       if(!estaVacia(confirmarClaveValor)) {
+             mostrarError(confirmarClave, "La confirmación de la clave es obligatoria")
+       }else if(!contraseniaValida(confirmarClaveValor)) {
+            mostrarError(
+              confirmarClave,
+              "La contraseña debe tener al menos 8 caracteres, una mayuscula, una minuscula"
+            );
+       } else if(claveValor !== confirmarClaveValor) {
+            mostrarError(confirmarClave, "Las contraseñas no son iguales")
+       } else {
+             mostrarCorrecto(confirmarClave)
+             validado = true
+       }
+}
 
 const estaVacia = (valor) => (valor == "" ? false : true);
 
@@ -48,4 +73,5 @@ const mostrarCorrecto = (input) => {
 formulario.addEventListener("submit", (e) => {
   e.preventDefault();
   let esContraseniaValida = verificarContrasenia();
+  let esConfirmacionValida = esIgualAContrasenia()
 });
