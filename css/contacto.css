@@ -1,0 +1,30 @@
+:root {
+    --background-color-negrito:#212429;
+    --background-color-rolling: #c10000;
+}
+
+label{
+    color: white;
+}
+
+.padre{
+    background-color:var(--background-color-negrito);
+    width: 500px;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 1rem;
+}
+.padre1{
+    width: 500px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background-color: var(--background-color-negrito);
+    border-radius: 1rem;
+}
+
+.abuelo{
+    justify-content: space-evenly;
+}
+
+
