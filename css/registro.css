@@ -1,0 +1,15 @@
+.validacion.error {
+      border: 1px solid #dc3545;
+      border-radius: 10px;
+      height: 50px
+}
+
+.validacion small {
+      color: #dc3545;
+}
+
+
+.validacion.correcto {
+      border: 1px solid #28a745;
+
+}
