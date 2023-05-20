@@ -1,0 +1,8 @@
+.imagenerror{
+    width: 100%;
+}
+@media (min-width:768px) {
+    .imagenerror{
+        width: 50%;
+    }   
+    }
