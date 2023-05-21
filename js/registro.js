@@ -2,6 +2,21 @@ const formulario = document.getElementById("login-form");
 const correo = document.getElementById("correo");
 const clave = document.getElementById("clave");
 const confirmarClave = document.getElementById("confirmar-clave");
+const modalConfirmacion = document.querySelector(".agregar-modal");
+
+const verificarEmail = () => {
+      let validado = false;
+      const correoValor = correo.value.trim();
+      if(!estaVacia(correoValor)) {
+            mostrarError(correo, "El correo electrónico es obligatorio")
+      } else if(!emailValido(correoValor)) {
+            mostrarError(correo, "El correo no es válido")
+      } else {
+            mostrarCorrecto(correo)
+            validado = true
+      }
+      return validado
+}
 
 const verificarContrasenia = () => {
   let validado = false;
@@ -15,8 +30,9 @@ const verificarContrasenia = () => {
     );
   } else {
       mostrarCorrecto(clave)
-      valid = true;
+      validado = true;
   }
+  return validado;
 };
 
 const esIgualAContrasenia = () => {
@@ -36,13 +52,10 @@ const esIgualAContrasenia = () => {
              mostrarCorrecto(confirmarClave)
              validado = true
        }
+       return validado;
 }
 
 const estaVacia = (valor) => (valor == "" ? false : true);
-
-const esEntre = (largo, min, max) => {
-  largo < min || largo > max ? false : true;
-};
 
 const emailValido = (email) => {
   const re = /^\w+([\.\+\-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
@@ -71,7 +84,44 @@ const mostrarCorrecto = (input) => {
 };
 
 formulario.addEventListener("submit", (e) => {
-  e.preventDefault();
-  let esContraseniaValida = verificarContrasenia();
-  let esConfirmacionValida = esIgualAContrasenia()
+      e.preventDefault();
+      let esEmailValido = verificarEmail();
+      let esContraseniaValida = verificarContrasenia();
+      let esConfirmacionValida = esIgualAContrasenia();
+
+      let esValidoElFormulario = esEmailValido && esContraseniaValida && esConfirmacionValida
+
+      if(esValidoElFormulario) {
+            modalConfirmacion.classList.add("activar-modal")
+            modalConfirmacion.textContent = "Registración realizada con éxito"
+            setTimeout(() => {
+                  formulario.submit();
+            }, 800);
+      }
 });
+
+const validacionEnTiempoReal = (fn, delay = 400) => {
+      let timeout;
+      return(...args) => {
+            if(timeout) clearInterval;
+            setTimeout(() => {
+                  fn.apply(null, args)
+            }, delay);
+      }
+}
+
+formulario.addEventListener("input", validacionEnTiempoReal((e) => {
+      switch (e.target.id) {
+            case "correo":
+                  verificarEmail()
+                  break;
+      
+            case "clave":
+                  verificarContrasenia()
+                  break;
+
+            case "confirmar-clave": 
+                  esIgualAContrasenia()
+                  break;
+      }
+}))

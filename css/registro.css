@@ -1,7 +1,9 @@
+/* Fuente */
 body {
       font-family: 'Montserrat', sans-serif;
 }
 
+/* Validaciones */
 .validacion.error {
       border: 1px solid #dc3545;
       border-radius: 10px;
@@ -26,4 +28,26 @@ body {
       border: 1px solid #28a745;
       border-radius: 10px;
       height: 50px;
+}
+
+/* Fin validaciones */
+
+/* Modal de correcto */
+.agregar-modal {
+      padding: 15px 0px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      background-color: #333;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      transition: all 0.5s ease-out;
+      transform: translateY(200%);
+}
+
+.activar-modal {
+      transform: translateY(0px);
+      transition: 0.5s ease;
 }
