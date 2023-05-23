@@ -4,20 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Rollig Games es una plataforma donde podés encontrar los mejores videjuegos del mercado"
-    />
+    <meta name="description" content="Rollig Games es una plataforma donde podés encontrar los mejores videjuegos del mercado"/>
     <meta name="author" content="Los gamers" />
-    <!--Metadatos para los estilos bootstrap y CSS-->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="style.css" />
+    <title>Inicio de sesión</title>
     <!--Metadatos para el icono-->
+
+    <link rel="shortcut icon" href="../assets/imagenes/favicon.png" type="image/x-icon"/>
     <link
       rel="shortcut icon"
       href="../assets/imagenes/favicon.png"
@@ -26,18 +18,15 @@
     <link rel="stylesheet" href="../style.css" />
     <title>Login</title>
     <link rel="stylesheet" href="../css/login.css" />
-    <!--INICIO LINK BOOSTRAP CSS-->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
-      crossorigin="anonymous"
-    />
-  </head>
 
+    <!--INICIO LINK BOOSTRAP CSS-->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../css/login.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous"/>
+  </head>
 <body>
     <header class="sticky-top">
-        <!--Navbar-->
+        <!-- Navbar -->
         <nav 
          class="navbar navbar-expand-lg navbar-dark" 
          style="background-color: var(--background-color-negrito);">
@@ -65,11 +54,11 @@
                 <li class="nav-item">
                   <a class="nav-link" href="./acerca.html">Acerca de nosotros |</a>
                 </li>
-                <!--el link a la página login es con Ingresar-->
+                <!-- el link a la página login es con Ingresar -->
                 <li class="nav-item">
                   <a class="nav-link" href="./login.html">Ingresar |</a>
                 </li>
-                 <!--el link a la página registro es con Registrarse-->
+                 <!-- el link a la página registro es con Registrarse -->
                  <li class="nav-item">
                     <a class="nav-link" href="./registro.html">Registrarse</a>
                   </li>
@@ -93,7 +82,7 @@
                         <div class="card-body p-4 p-lg-5 text-black">
           
                           <form id="login-form">
-                            <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Inicia sesión en tu cuenta</h5>
+                            <h5 class="fw-normal mb-3 pb-3 text-light" style="letter-spacing: 1px;">Inicia sesión en tu cuenta</h5>
           
                             <div class="form-outline mb-4">
                               <input type="email" id="correo" class="form-control form-control-lg" placeholder="Correo electrónico" required />
@@ -107,10 +96,12 @@
                               <button type="submit" class="btn btn-success btn-lg btn-block w-100">Iniciar sesión</button>
                             </div>
           
-                            <p class="small text-white">¿Olvidó su contraseña? <a href="#!" class=" text-white">Click aquí para recuperarla</a></p>
+                            <p class="small text-white">¿Olvidó su contraseña? <a id="recuperar" href="#" class=" text-white">Click aquí para recuperarla</a></p>
                             
                             <p class="mb-5 pb-lg-2" style="color: #8990e2;">¿No tienes una cuenta? <a href="./registro.html" style="color: #8990e2;">Regístrese aquí</a></p>
                           </form>
+                          
+                          <div id="alert-container" class="text-center"></div>
           
                         </div>
                       </div>
@@ -124,11 +115,11 @@
     <footer class="footer">
         <div class="container">
           <div class="row align-items-center w-100 justify-contentt-space-bettween  ">
-  <!--Todos los derechos reservados-->
+  <!-- Todos los derechos reservados -->
             <div class="col-12 col-md-6 col-lg-6">
                 <p class="text-justify">© Copyright 2023 RollingCode School <br>Todos los derechos reservados</p>
             </div>
-  <!--REDES SOCIALES-->
+  <!-- REDES SOCIALES -->
             <div class="col-12 col-md-6 col-lg-6">
               <h4 class="footer_title text-center">Redes sociales:</h4>
               <div class="w-100 d-flex justify-content-center gap-2">
