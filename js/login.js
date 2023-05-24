@@ -1,13 +1,15 @@
 'use strict';
+// funciones del formulario de inicio de sesion
+let form = document.getElementById("login-form");
 
-document.getElementById("login-form").addEventListener("submit", function(event){
+form.addEventListener("submit", function(event){
     event.preventDefault(); //evita que se actualice la pagina
 
     // con estas dos variables obtengo lo que se escriba en correo y contraseña 
-    let nombre = document.getElementById("correo").value;
-    let contrasenia = document.getElementById("clave").value;
+    let nombre = document.getElementById("correo").value.trim();
+    let contrasenia = document.getElementById("clave").value.trim();
 
-    // pendiente de modificacion, segun cual sea la key en el registro
+    // buscamo dentro del localstorage
     let Users = JSON.parse(localStorage.getItem('users')) || [];
 
     // buscamos dentro de la variable Users el correo y contraseña que coincidan con el localStorage
@@ -15,6 +17,7 @@ document.getElementById("login-form").addEventListener("submit", function(event)
 
     // verificamos el administrador
     if(nombre === "admin@admin.com" && contrasenia === "admin"){
+        setRol("administrador");
         showAlert('Inicio exitoso, Bienvenido', 'alert-success');
         setTimeout(function() {
             window.location.href = 'admin.html';
@@ -23,13 +26,19 @@ document.getElementById("login-form").addEventListener("submit", function(event)
     }else if(!validacion){
         return showAlert('Usuario no registrado y/o datos mal puestos', 'alert-danger');
     }else{
+        setRol("usuario");
         showAlert(`Inicio exitoso, Bienvenido ${validacion.nombre}, 'alert-success'`);
         setTimeout(function() {
             window.location.href = 'index.html';
         }, 3000);
     }
 
-    // prueba de alertas con bootstrap
+    //Almacenar el rol administrador o usuario en localStorage
+    function setRol(rol) {
+        localStorage.setItem("rol", rol);
+    }
+
+    // Alert con Bootstrap
     function showAlert(message, alertType) {
         // Crea un elemento de alerta
         const alertElement = document.createElement('div');
@@ -43,6 +52,7 @@ document.getElementById("login-form").addEventListener("submit", function(event)
     }
 });
 
+// codigo para recuperar contraseña
 let CapturarRecuperacion = document.querySelector("#recuperar");
 
 CapturarRecuperacion.addEventListener("click", function(){
@@ -56,5 +66,4 @@ CapturarRecuperacion.addEventListener("click", function(){
     }else {
         alert("Correo no encontrado");
     }
-
-})
+});
