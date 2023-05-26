@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // rol usuario
 document.addEventListener("DOMContentLoaded", function () {
-    // Verificar el rol de administrador
+    // Verificar el rol 
     let rol = localStorage.getItem("rol");
     if (rol === "usuario") {
         // Mostrar el botón de cerrar sesión
