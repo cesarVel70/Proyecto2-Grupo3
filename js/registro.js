@@ -96,7 +96,7 @@ formulario.addEventListener("submit", (e) => {
             modalConfirmacion.textContent = "Registración realizada con éxito"
             setTimeout(() => {
                   formulario.submit();
-            }, 800);
+            }, 1000);
       }
 });
 
