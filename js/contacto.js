@@ -51,3 +51,27 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+
+//funciones del formulario
+
+//defino las variables necesarias
+let motivo = document.getElementById('motivo');
+let desplegable = document.getElementById('desplegable');
+
+//añado escuchador de evento para conocer que opcion se elije
+motivo.addEventListener('click', eleccion);
+
+//utilizo una funcion para correr el escuchador de evento
+function eleccion(e){
+    e.preventDefault();
+    //guardo el valor de la opcion elegida
+    const opcion = e.target.value;
+    //de acuerdo al valor de la opcion, aparezco o desaparezco el input
+    if(opcion == 4){
+        desplegable.style.display = "block";
+    }else if(opcion != 4){
+        desplegable.style.display = "none"
+    }
+}
+
+

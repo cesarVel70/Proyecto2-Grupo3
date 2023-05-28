@@ -36,7 +36,7 @@
     <!--FIN LINK BOOSTRAP CSS-->
   </head>
 
-  <body>
+  <body style="font-family: 'Montserrat', sans-serif; line-height: 17px">
     <header class="sticky-top">
       <!--Navbar-->
       <nav
@@ -72,108 +72,152 @@
                 >
               </li>
               <!--el link a la página login es con Ingresar-->
-              <li id= "btn-ingresar" class="nav-item">
+              <li id="btn-ingresar" class="nav-item">
                 <a class="nav-link" href="./login.html">Ingresar |</a>
               </li>
-               <!--el link a la página registro es con Registrarse-->
+              <!--el link a la página registro es con Registrarse-->
               <li id="btn-registro" class="nav-item">
-                  <a  class="nav-link" href="./registro.html">Registrarse</a>
-                </li>
-                <!-- boton para cerrar sesion -->
-                <li class="nav-item">
-                  <a id="cerrarSesion" class="nav-link " href="#"></a>
-                </li>
-                <li class="nav-item">
-                    <a id="etiqueta" class="nav-link" href="./admin.html"></a>
-                </li>
+                <a class="nav-link" href="./registro.html">Registrarse</a>
+              </li>
+              <!-- boton para cerrar sesion -->
+              <li class="nav-item">
+                <a id="cerrarSesion" class="nav-link" href="#"></a>
+              </li>
+              <li class="nav-item">
+                <a id="etiqueta" class="nav-link" href="./admin.html"></a>
+              </li>
             </ul>
           </div>
         </div>
       </nav>
     </header>
     <main>
-      <section class="container-fluid d-flex abuelo" style="background: rgb(11,11,19);
-      background: linear-gradient(180deg, rgba(11,11,19,1) 0%, rgba(0,0,5,1) 34%, rgba(78,78,103,1) 100%, rgba(0,212,255,1) 100%);">
-        <div class="padre">
+      <section
+        class="container-fluid d-flex flex-wrap abuelo col"
+        style="
+          background: rgb(11, 11, 19);
+          background: linear-gradient(
+            180deg,
+            rgba(11, 11, 19, 1) 0%,
+            rgba(0, 0, 5, 1) 34%,
+            rgba(78, 78, 103, 1) 100%,
+            rgba(0, 212, 255, 1) 100%
+          );
+        "
+      >
+        <div class="padre col-xl-4 col-lg-4 col-md-12">
           <iframe
+            id="mapa"
             class="mt-4"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3560.1023709809183!2d-65.20977672512774!3d-26.836696090030856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94225d3ad7f30f1d%3A0xf8606cd659b8e3e4!2sRollingCode%20School!5e0!3m2!1ses-419!2sar!4v1684548411233!5m2!1ses-419!2sar"
-            width="400"
-            height="300"
             style="border: 0"
             allowfullscreen=""
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
-          ></iframe
-          ><br />
+          ></iframe>
+          <br />
           <hr />
           <i class="fa-solid fa-map-location-dot"></i>
           <p>Gral. Paz 576, T4000 San Miguel de Tucumán, Tucumán</p>
           <hr />
           <i class="fa-solid fa-phone"></i>
           <p>0381 578-3030</p>
+          <hr />
         </div>
-        <div class="padre1">
+        <div class="padre1 col-xl-4 col-lg-4 col-md-12">
           <form action="">
-            <label for="" class="form-label mt-2">Nombre</label>
-            <input
-              class="elemento form-control mb-3"
-              type="text"
-              placeholder="Nombre"
-              maxlength="40"
-              minlength="2"
-              required
-            />
-            <label for="" class="form-label">Apellido</label>
-            <input
-              class="elemento form-control mb-3"
-              placeholder="Apellido"
-              maxlength="100"
-              minlength="2"
-              type="text"
-              required
-            />
-            <label for="" class="form-label">Correo Electronico</label>
-            <input
-              type="email"
-              class="elemento form-control mb-3"
-              placeholder="Correo Electronico"
-              minlength="2"
-              maxlength="100"
-              required
-            />
-            <label for="" class="form-label">Telefono</label>
-            <input
-              type="tel"
-              name=""
-              id=""
-              class="elemento form-control mb-3"
-              placeholder="Telefono"
-              minlength="2"
-              maxlength="20"
-              required
-            />
-            <label for="" class="form-label"
-              >Contanos porque te comunicas con nosotros</label
-            >
-            <textarea
-              name=""
-              id=""
-              cols="30"
-              rows="10"
-              class="form-control"
-              minlength="2"
-              maxlength="500"
-            ></textarea><br>
-            <!-- Button trigger modal -->
-            <button
-              type="submit"
-              class="btn btn-success "
-              data-bs-toggle="modal"
-              data-bs-target="#exampleModal"
-            >
-              Enviar
-            </button>
+            <div id="titulo">
+              <h1>Contacto</h1>
+            </div>
+            <div class="input-group">
+              <input
+                class="form-control mb-3"
+                type="text"
+                placeholder="Nombre"
+                maxlength="40"
+                minlength="2"
+                required
+              />
+            </div>
+            <div class="input-group">
+              <input
+                class="form-control mb-3"
+                placeholder="Apellido"
+                maxlength="100"
+                minlength="2"
+                type="text"
+                required
+              />
+            </div>
+            <div class="input-group">
+              <input
+                type="email"
+                class="form-control mb-3"
+                placeholder="Correo Electronico"
+                minlength="2"
+                maxlength="100"
+                required
+              />
+            </div>
+            <div class="input-group">
+              <input
+                type="tel"
+                name=""
+                id=""
+                class="form-control mb-3"
+                placeholder="Telefono"
+                minlength="2"
+                maxlength="20"
+                required
+              />
+            </div>
+            <div class="input-group">
+              <select id="motivo">
+                <option value="0">¿Por que motivo nos contactas?</option>
+                <option value="1">Problemas en la compra</option>
+                <option value="2">Problemas en el inicio de sesion</option>
+                <option value="3">Problemas en recuperacion de cuenta</option>
+                <option value="4">Otro...</option>
+              </select>
+            </div>
+            <br />
+            <div id="desplegable">
+              <div class="input-group">
+                <input
+                  id="elemento"
+                  class="mb-3"
+                  type="text"
+                  placeholder="Indique su motivo..."
+                  maxlength="140"
+                  minlength="2"
+                  required
+                />
+              </div>
+            </div>
+            <div>
+              <label for="comentario" class="form-label"
+                >Comentanos un poco mas al respecto</label
+              >
+              <textarea
+                name="comentario"
+                id="comentario"
+                cols="30"
+                rows="10"
+                class="form-control"
+                minlength="2"
+                maxlength="500"
+              ></textarea>
+
+              <!-- Button trigger modal -->
+              <button
+                type="submit"
+                class="btn btn-success mt-4"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+              >
+                Enviar
+              </button>
+            </div>
 
             <!-- Modal -->
             <div
