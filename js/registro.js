@@ -83,13 +83,49 @@ const mostrarCorrecto = (input) => {
   error.textContent = "";
 };
 
-formulario.addEventListener("submit", (e) => {
-      e.preventDefault();
+const verificarLocalStorage = () => {
+       
+      let estadoLocalStorage =
+      JSON.parse(localStorage.getItem("datosFormulario")) || [];
+      
+      const valorDelCorreo = correo.value.trim()
+      const valorDeLaClave = clave.value.trim()
+      
+      let existeUsuario = estadoLocalStorage.find((user) => user.correo == valorDelCorreo);
+      
+      const nuevoUsuario = {
+            correo: valorDelCorreo,
+            clave: valorDeLaClave,
+      }
+      
+      if (existeUsuario) {
+            modalConfirmacion.classList.add("activar-modal");
+            modalConfirmacion.textContent = "Correo ya existente";
+            validado = false
+            return;
+      } else {
+            estadoLocalStorage.push(nuevoUsuario);
+            localStorage.setItem(
+                  "datosFormulario",
+              JSON.stringify(estadoLocalStorage)
+            );    
+            validado = true
+      }
+
+      return validado
+}
+      
+      
+      
+      
+      formulario.addEventListener("submit", (e) => {
+            e.preventDefault();
       let esEmailValido = verificarEmail();
       let esContraseniaValida = verificarContrasenia();
       let esConfirmacionValida = esIgualAContrasenia();
+      let esCorreoExistente = verificarLocalStorage();
 
-      let esValidoElFormulario = esEmailValido && esContraseniaValida && esConfirmacionValida
+      let esValidoElFormulario = esEmailValido && esContraseniaValida && esConfirmacionValida && esCorreoExistente
 
       if(esValidoElFormulario) {
             modalConfirmacion.classList.add("activar-modal")
