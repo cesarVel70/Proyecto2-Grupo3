@@ -1,9 +1,44 @@
+// Traemos todos los elementos del HTML.
 const formulario = document.getElementById("login-form");
 const correo = document.getElementById("correo");
 const clave = document.getElementById("clave");
 const confirmarClave = document.getElementById("confirmar-clave");
 const modalConfirmacion = document.querySelector(".agregar-modal");
 
+// Verificamos si lo que se introduce está vacio.
+const estaVacia = (valor) => (valor == "" ? false : true);
+
+// Regex de email.
+const emailValido = (email) => {
+  const re = /^\w+([\.\+\-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
+  return re.test(email);
+};
+
+// Regex de contraseña, sea 8 carácteres, con números, letras tanto minúscula y mayúsculas.
+const contraseniaValida = (clave) => {
+  const re = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+  return re.test(clave);
+};
+
+// Función para mostrar el mensaje de error de los inputs .
+const mostrarError = (input, msj) => {
+  const validacion = input.parentElement;
+  validacion.classList.remove("correcto");
+  validacion.classList.add("error");
+  const error = validacion.querySelector("small");
+  error.textContent = msj;
+};
+
+// Función para mostrar si el input es válido.
+const mostrarCorrecto = (input) => {
+  const validacion = input.parentElement;
+  validacion.classList.remove("error");
+  validacion.classList.add("correcto");
+  const error = validacion.querySelector("small");
+  error.textContent = "";
+};
+
+// Verificamos si el email es válido.
 const verificarEmail = () => {
       let validado = false;
       const correoValor = correo.value.trim();
@@ -18,6 +53,7 @@ const verificarEmail = () => {
       return validado
 }
 
+// Verificamos si la contraseña cumple con el regex.
 const verificarContrasenia = () => {
   let validado = false;
   const claveValor = clave.value.trim();
@@ -35,6 +71,7 @@ const verificarContrasenia = () => {
   return validado;
 };
 
+// Verificamos si la contraseña son iguales.
 const esIgualAContrasenia = () => {
        let validado = false;
        const claveValor = clave.value.trim();
@@ -55,41 +92,47 @@ const esIgualAContrasenia = () => {
        return validado;
 }
 
-const estaVacia = (valor) => (valor == "" ? false : true);
+// Función para gestionar el local storage, así el usuario se pueda registrar si no existe, y en el caso que exista no se pueda registrar
+const verificarLocalStorage = () => {
+      let estadoLocalStorage =
+      JSON.parse(localStorage.getItem("datosFormulario")) || [];
+      
+      const valorDelCorreo = correo.value.trim()
+      const valorDeLaClave = clave.value.trim()
+      
+      let existeUsuario = estadoLocalStorage.find((user) => user.correo == valorDelCorreo);
+      
+      const nuevoUsuario = {
+            correo: valorDelCorreo,
+            clave: valorDeLaClave,
+      }
+      
+      if (existeUsuario) {
+            modalConfirmacion.classList.add("activar-modal");
+            modalConfirmacion.textContent = "Correo ya existente";
+            validado = false
+            return;
+      } else {
+            estadoLocalStorage.push(nuevoUsuario);
+            localStorage.setItem(
+                  "datosFormulario",
+              JSON.stringify(estadoLocalStorage)
+            );    
+            validado = true
+      }
 
-const emailValido = (email) => {
-  const re = /^\w+([\.\+\-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
-  return re.test(email);
-};
+      return validado
+}
 
-const contraseniaValida = (clave) => {
-  const re = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
-  return re.test(clave);
-};
-
-const mostrarError = (input, msj) => {
-  const validacion = input.parentElement;
-  validacion.classList.remove("correcto");
-  validacion.classList.add("error");
-  const error = validacion.querySelector("small");
-  error.textContent = msj;
-};
-
-const mostrarCorrecto = (input) => {
-  const validacion = input.parentElement;
-  validacion.classList.remove("error");
-  validacion.classList.add("correcto");
-  const error = validacion.querySelector("small");
-  error.textContent = "";
-};
-
-formulario.addEventListener("submit", (e) => {
-      e.preventDefault();
+// Formulario con las condiciones para que se pueda hacer el submit
+      formulario.addEventListener("submit", (e) => {
+            e.preventDefault();
       let esEmailValido = verificarEmail();
       let esContraseniaValida = verificarContrasenia();
       let esConfirmacionValida = esIgualAContrasenia();
+      let esCorreoExistente = verificarLocalStorage();
 
-      let esValidoElFormulario = esEmailValido && esContraseniaValida && esConfirmacionValida
+      let esValidoElFormulario = esEmailValido && esContraseniaValida && esConfirmacionValida && esCorreoExistente
 
       if(esValidoElFormulario) {
             modalConfirmacion.classList.add("activar-modal")
@@ -100,6 +143,7 @@ formulario.addEventListener("submit", (e) => {
       }
 });
 
+// Validación de los inputs en tiempo real
 const validacionEnTiempoReal = (fn, delay = 400) => {
       let timeout;
       return(...args) => {
@@ -110,6 +154,7 @@ const validacionEnTiempoReal = (fn, delay = 400) => {
       }
 }
 
+// Validación de los inputs en tiempo real.
 formulario.addEventListener("input", validacionEnTiempoReal((e) => {
       switch (e.target.id) {
             case "correo":
