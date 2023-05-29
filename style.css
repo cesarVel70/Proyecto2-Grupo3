@@ -24,8 +24,33 @@
   }
   /*FIN NAVBAR*/
 
+  /*INICIO MAIN*/
+  .destacado{
+    display: flex;
+    align-items: center;
+    margin-left: 0;
+    margin-bottom: 0;
+  }  
+  .description1{
+    height: 400px;
+    width: 500px;
+  }
+  .categorias1{
+    margin:20vw;
+    margin-top: 0;
+    height: 600px;
+    width: 1200px;
+  }
+  .categoriastitulo{
+    text-decoration: underline ;
+    margin: 10vw;
+    margin-top: 0vw;
+  }
+  /*FIN MAIN*/
+
      /*INICIO FOOTER*/
      .footer{
+        margin: 5vw;
         background-color: #212429;
         color:white;
         padding: 10px 0px;
