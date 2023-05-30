@@ -1,3 +1,6 @@
+*{
+    font-family: 'Montserrat', sans-serif;
+}
 :root {
     --background-color-negrito:#212429;
     --background-color-rolling: #c10000;

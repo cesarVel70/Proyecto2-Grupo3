@@ -34,63 +34,67 @@
       crossorigin="anonymous"
     />
     <!--FIN LINK BOOSTRAP CSS-->
+
+    <!-- Fuente -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Fin fuente -->
   </head>
 
   <body style="font-family: 'Montserrat', sans-serif; line-height: 17px">
     <header class="sticky-top">
       <!--Navbar-->
-      <nav
-        class="navbar navbar-expand-lg navbar-dark"
-        style="background-color: var(--background-color-negrito)"
-      >
-        <div class="container">
-          <a class="navbar-brand d-flex align-items-center gap-2" href="#">
-            <img src="../assets/imagenes/logo.png" alt="logo" class="img-logo"
-          /></a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="../index.html">Inicio |</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Contacto |</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./acerca.html"
-                  >Acerca de nosotros |</a
-                >
-              </li>
-              <!--el link a la página login es con Ingresar-->
-              <li id="btn-ingresar" class="nav-item">
-                <a class="nav-link" href="./login.html">Ingresar |</a>
-              </li>
-              <!--el link a la página registro es con Registrarse-->
-              <li id="btn-registro" class="nav-item">
-                <a class="nav-link" href="./registro.html">Registrarse</a>
-              </li>
-              <!-- boton para cerrar sesion -->
-              <li class="nav-item">
-                <a id="cerrarSesion" class="nav-link" href="#"></a>
-              </li>
-              <li class="nav-item">
-                <a id="etiqueta" class="nav-link" href="./admin.html"></a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
+          <nav 
+          class="navbar navbar-expand-lg navbar-dark" 
+          style="background-color: var(--background-color-negrito);">
+          <div class="container">
+            <a class="navbar-brand" href="#"><img src="../assets/imagenes/logo.png" alt="logo" class="img-logo" ></a>
+      
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                  >
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="../index.html">Inicio</a>
+                    </li>
+                    
+      <!--el link a la página registro es con Registrarse-->
+      
+                    <li id="btn-registro"class="nav-item">
+                      <a class="nav-link" href="./registro.html">Registrarse</a>
+                    </li>
+      
+      <!-- boton para cerrar sesion -->
+                       <li class="nav-item">
+                          <a id="cerrarSesion" class="nav-link " href="#"></a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="etiqueta" class="nav-link" href="#"></a>
+                        </li>
+                      </ul>
+                  <div>
+      <!--el link a la página login es con Ingresar-->
+                    <button id= "btn-ingresar" class="btn btn-outline-light">
+                      Ingresar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </nav>
+            </header>
     <main>
       <section
         class="container-fluid d-flex flex-wrap abuelo col"
@@ -262,42 +266,30 @@
     </main>
     <footer class="footer">
       <div class="container">
-        <div
-          class="row align-items-center w-100 justify-contentt-space-bettween"
-        >
-          <!--Todos los derechos reservados-->
+        <div class="row align-items-center w-100 justify-contentt-space-bettween  ">
           <div class="col-12 col-md-6 col-lg-6">
-            <p class="text-justify">
-              © Copyright 2023 RollingCode School <br />Todos los derechos
-              reservados
-            </p>
+              <!--Acerca de nosostros y Contacto pueden ir en el footer según requerimientos-->
+          
+              <a class="nav-link" href="./contacto.html">Contacto</a>
+
+
+              <a class="nav-link" href="./acerca.html">Acerca de nosotros</a>
+           
+              <!--Todos los derechos reservados-->
+              <p class="text-justify">© Copyright 2023 RollingCode School <br>Todos los derechos reservados</p>
           </div>
-          <!--REDES SOCIALES-->
+<!--REDES SOCIALES-->
           <div class="col-12 col-md-6 col-lg-6">
             <h4 class="footer_title text-center">Redes sociales:</h4>
             <div class="w-100 d-flex justify-content-center gap-2">
-              <a href="../pages/error404.html"
-                ><img
-                  src="../assets/imagenes/logos redes sociales/instagram.png"
-                  alt="instagram"
-                  class="img-logo-redes"
-              /></a>
-              <a href="../pages/error404.html"
-                ><img
-                  src="../assets/imagenes/logos redes sociales/facebook.png"
-                  alt="facebook"
-                  class="img-logo-redes"
-              /></a>
-              <a href="../pages/error404.html"
-                ><img
-                  src="../assets/imagenes/logos redes sociales/youtube.png"
-                  alt="youtube"
-                  class="img-logo-redes"
-              /></a>
+          <a href="#"><img src="../assets/imagenes/logos redes sociales/instagram-1-svgrepo-com.svg" alt="instagram" class="img-logo-redes"></a>
+            <a href="#"><img src="../assets/imagenes/logos redes sociales/facebook-1-svgrepo-com.svg" alt="facebook" class="img-logo-redes"></a>
+            <a href="#"><img src="../assets/imagenes/logos redes sociales/youtube-svgrepo-com.svg" alt="youtube" class="img-logo-redes"></a>
             </div>
-          </div>
+          </div>         
         </div>
       </div>
+  
     </footer>
 
     <!--script para el js de bootstrap-->
