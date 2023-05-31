@@ -40,18 +40,18 @@ const mostrarCorrecto = (input) => {
 
 // Verificamos si el email es válido.
 const verificarEmail = () => {
-      let validado = false;
-      const correoValor = correo.value.trim();
-      if(!estaVacia(correoValor)) {
-            mostrarError(correo, "El correo electrónico es obligatorio")
-      } else if(!emailValido(correoValor)) {
-            mostrarError(correo, "El correo no es válido")
-      } else {
-            mostrarCorrecto(correo)
-            validado = true
-      }
-      return validado
-}
+  let validado = false;
+  const correoValor = correo.value.trim();
+  if (!estaVacia(correoValor)) {
+    mostrarError(correo, "El correo electrónico es obligatorio");
+  } else if (!emailValido(correoValor)) {
+    mostrarError(correo, "El correo no es válido");
+  } else {
+    mostrarCorrecto(correo);
+    validado = true;
+  }
+  return validado;
+};
 
 // Verificamos si la contraseña cumple con el regex.
 const verificarContrasenia = () => {
@@ -65,108 +65,113 @@ const verificarContrasenia = () => {
       "La contraseña debe tener al menos 8 caracteres, una mayuscula, una minuscula, y números"
     );
   } else {
-      mostrarCorrecto(clave)
-      validado = true;
+    mostrarCorrecto(clave);
+    validado = true;
   }
   return validado;
 };
 
 // Verificamos si la contraseña son iguales.
 const esIgualAContrasenia = () => {
-       let validado = false;
-       const claveValor = clave.value.trim();
-       const confirmarClaveValor = confirmarClave.value.trim()
-       if(!estaVacia(confirmarClaveValor)) {
-             mostrarError(confirmarClave, "La confirmación de la clave es obligatoria")
-       }else if(!contraseniaValida(confirmarClaveValor)) {
-            mostrarError(
-              confirmarClave,
-              "La contraseña debe tener al menos 8 caracteres, una mayuscula, una minuscula"
-            );
-       } else if(claveValor !== confirmarClaveValor) {
-            mostrarError(confirmarClave, "Las contraseñas no son iguales")
-       } else {
-             mostrarCorrecto(confirmarClave)
-             validado = true
-       }
-       return validado;
-}
+  let validado = false;
+  const claveValor = clave.value.trim();
+  const confirmarClaveValor = confirmarClave.value.trim();
+  if (!estaVacia(confirmarClaveValor)) {
+    mostrarError(confirmarClave, "La confirmación de la clave es obligatoria");
+  } else if (!contraseniaValida(confirmarClaveValor)) {
+    mostrarError(
+      confirmarClave,
+      "La contraseña debe tener al menos 8 caracteres, una mayuscula, una minuscula"
+    );
+  } else if (claveValor !== confirmarClaveValor) {
+    mostrarError(confirmarClave, "Las contraseñas no son iguales");
+  } else {
+    mostrarCorrecto(confirmarClave);
+    validado = true;
+  }
+  return validado;
+};
 
 // Función para gestionar el local storage, así el usuario se pueda registrar si no existe, y en el caso que exista no se pueda registrar
 const verificarLocalStorage = () => {
-      let estadoLocalStorage =
-      JSON.parse(localStorage.getItem("datosFormulario")) || [];
-      
-      const valorDelCorreo = correo.value.trim()
-      const valorDeLaClave = clave.value.trim()
-      
-      let existeUsuario = estadoLocalStorage.find((user) => user.correo == valorDelCorreo);
-      
-      const nuevoUsuario = {
-            correo: valorDelCorreo,
-            clave: valorDeLaClave,
-      }
-      
-      if (existeUsuario) {
-            modalConfirmacion.classList.add("activar-modal");
-            modalConfirmacion.textContent = "Correo ya existente";
-            validado = false
-            return;
-      } else {
-            estadoLocalStorage.push(nuevoUsuario);
-            localStorage.setItem(
-                  "datosFormulario",
-              JSON.stringify(estadoLocalStorage)
-            );    
-            validado = true
-      }
+  let estadoLocalStorage = JSON.parse(localStorage.getItem("users")) || [];
 
-      return validado
-}
+  const valorDelCorreo = correo.value.trim();
+  const valorDeLaClave = clave.value.trim();
+
+  let existeUsuario = estadoLocalStorage.find(
+    (user) => user.correo == valorDelCorreo
+  );
+
+  const nuevoUsuario = {
+    correo: valorDelCorreo,
+    clave: valorDeLaClave,
+  };
+
+  if (existeUsuario) {
+    modalConfirmacion.classList.add("activar-modal");
+    modalConfirmacion.textContent = "Correo ya existente";
+    validado = false;
+    return;
+  } else {
+    estadoLocalStorage.push(nuevoUsuario);
+    localStorage.setItem("users", JSON.stringify(estadoLocalStorage));
+    validado = true;
+  }
+
+  return validado;
+};
 
 // Formulario con las condiciones para que se pueda hacer el submit
-      formulario.addEventListener("submit", (e) => {
-            e.preventDefault();
-      let esEmailValido = verificarEmail();
-      let esContraseniaValida = verificarContrasenia();
-      let esConfirmacionValida = esIgualAContrasenia();
-      let esCorreoExistente = verificarLocalStorage();
+formulario.addEventListener("submit", (e) => {
+  e.preventDefault();
+  let esEmailValido = verificarEmail();
+  let esContraseniaValida = verificarContrasenia();
+  let esConfirmacionValida = esIgualAContrasenia();
+  let esCorreoExistente = verificarLocalStorage();
 
-      let esValidoElFormulario = esEmailValido && esContraseniaValida && esConfirmacionValida && esCorreoExistente
+  let esValidoElFormulario =
+    esEmailValido &&
+    esContraseniaValida &&
+    esConfirmacionValida &&
+    esCorreoExistente;
 
-      if(esValidoElFormulario) {
-            modalConfirmacion.classList.add("activar-modal")
-            modalConfirmacion.textContent = "Registración realizada con éxito"
-            setTimeout(() => {
-                  formulario.submit();
-            }, 1000);
-      }
+  if (esValidoElFormulario) {
+    modalConfirmacion.classList.add("activar-modal");
+    modalConfirmacion.textContent = "Registración realizada con éxito";
+    setTimeout(() => {
+      formulario.submit();
+    }, 1000);
+  }
 });
 
 // Validación de los inputs en tiempo real
 const validacionEnTiempoReal = (fn, delay = 400) => {
-      let timeout;
-      return(...args) => {
-            if(timeout) clearInterval;
-            setTimeout(() => {
-                  fn.apply(null, args)
-            }, delay);
-      }
-}
+  let timeout;
+  return (...args) => {
+    if (timeout) clearInterval;
+    setTimeout(() => {
+      fn.apply(null, args);
+    }, delay);
+  };
+};
 
 // Validación de los inputs en tiempo real.
-formulario.addEventListener("input", validacionEnTiempoReal((e) => {
-      switch (e.target.id) {
-            case "correo":
-                  verificarEmail()
-                  break;
-      
-            case "clave":
-                  verificarContrasenia()
-                  break;
+formulario.addEventListener(
+  "input",
+  validacionEnTiempoReal((e) => {
+    switch (e.target.id) {
+      case "correo":
+        verificarEmail();
+        break;
 
-            case "confirmar-clave": 
-                  esIgualAContrasenia()
-                  break;
-      }
-}))
+      case "clave":
+        verificarContrasenia();
+        break;
+
+      case "confirmar-clave":
+        esIgualAContrasenia();
+        break;
+    }
+  })
+);
