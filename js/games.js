@@ -51,3 +51,33 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+
+
+
+
+const sliderDerecha = document.querySelector(".slider-derecho")
+const sliderIzquierdo = document.querySelector(".slider-izquierdo")
+
+document.Imagen.src = imagenes[0]
+
+let contador = 0
+
+function moverDerecha() {
+      contador++
+      if(contador > imagenes.length - 1) {
+            contador = 0
+      }
+
+      document.Imagen.src = imagenes[contador];
+}
+
+function moverIzquierda() {
+      contador--
+      if(contador < 0) {
+            contador = imagenes.length - 1
+      }
+      document.Imagen.src = imagenes[contador];
+}
+
+sliderDerecha.addEventListener("click", moverDerecha)
+sliderIzquierdo.addEventListener("click", moverIzquierda)
