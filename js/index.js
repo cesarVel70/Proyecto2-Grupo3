@@ -51,3 +51,38 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+
+// creacion de tarjetas automaticamente desde el localStorage
+let cuerpoCentral = document.getElementById("cuerpoCentral");
+
+function actualizarTarjetas() {
+  cuerpoCentral.innerHTML = "";
+
+  let contenido = JSON.parse(localStorage.getItem("juegos"));
+
+  contenido.forEach((element) => {
+    if (element.publicado == 'true') {
+      const contenedor = document.createElement("div");
+      const card = `
+          <div class="card mt-5" style="width: 18rem;">
+              <img src="${element.url}" style="width: 300px; height:280px;" class="card-img-top img-fluid " alt="...">
+              <div class="card-body">
+                  <h5 class="card-title">${element.nombre}</h5>
+                  <p class="card-text overflow-y-scroll">${element.descripcion}</p>
+                  <a href="#" class="btn btn-success w-100">Comprar</a>
+              </div>
+          </div>
+      `;
+      contenedor.innerHTML = card;
+      cuerpoCentral.append(contenedor);
+    }
+  });
+}
+
+actualizarTarjetas();
+
+/* este codigo esta pendiente de si el localstorage tuvo cambios, si hubo cambios entonces
+llama a la funcion de actualizarTarjeta*/
+window.addEventListener("storage", () => {
+  actualizarTarjetas();
+});
