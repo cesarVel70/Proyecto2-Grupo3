@@ -8,6 +8,12 @@
     text-align: center;
 }
 
+#boton:hover{
+    cursor: pointer;
+    background-color: white;
+    color: green;
+}
+
 #mapa{
     width: 80%;
     height: 300px;

@@ -70,8 +70,14 @@ function eleccion(e){
     if(opcion == 4){
         desplegable.style.display = "block";
     }else if(opcion != 4){
-        desplegable.style.display = "none"
-    }
-}
+        desplegable.style.display = "none";
+    };
+};
 
+//verificacion
+
+let boton = document.getElementById("boton");
+
+
+boton.addEventListener("click",revision);
 
