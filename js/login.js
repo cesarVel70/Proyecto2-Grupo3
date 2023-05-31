@@ -6,17 +6,17 @@ form.addEventListener("submit", function(event){
     event.preventDefault(); //evita que se actualice la pagina
 
     // con estas dos variables obtengo lo que se escriba en correo y contraseña 
-    let nombre = document.getElementById("correo").value.trim();
-    let contrasenia = document.getElementById("clave").value.trim();
+    let correo = document.getElementById("correo").value.trim();
+    let clave = document.getElementById("clave").value.trim();
 
     // buscamo dentro del localstorage
     let Users = JSON.parse(localStorage.getItem('users')) || [];
 
     // buscamos dentro de la variable Users el correo y contraseña que coincidan con el localStorage
-    let validacion = Users.find(user => user.nombre === nombre && user.contrasenia === contrasenia);
+    let validacion = Users.find(user => user.correo === correo && user.clave === clave);
 
     // verificamos el administrador
-    if(nombre === "admin@admin.com" && contrasenia === "admin"){
+    if(correo === "admin@admin.com" && clave === "admin"){
         setRol("administrador");
         showAlert('Inicio exitoso, Bienvenido', 'alert-success');
         setTimeout(function() {
@@ -27,9 +27,9 @@ form.addEventListener("submit", function(event){
         return showAlert('Usuario no registrado y/o datos mal puestos', 'alert-danger');
     }else{
         setRol("usuario");
-        showAlert(`Inicio exitoso, Bienvenido ${validacion.nombre}, 'alert-success'`);
+        showAlert(`Inicio exitoso, Bienvenido ${correo}`, "alert-success");
         setTimeout(function() {
-            window.location.href = 'index.html';
+            window.location.href = '/index.html';
         }, 3000);
     }
 
@@ -59,10 +59,10 @@ CapturarRecuperacion.addEventListener("click", function(){
     let correoGuardado = prompt("Para recuperar la contraseña, debe ingresar el correo con el cual se registro");
     
     let usuarios = JSON.parse(localStorage.getItem('users')) ||[];
-    let buscarCorreo = usuarios.find(usuario => usuario.nombre === correoGuardado);
+    let buscarCorreo = usuarios.find(usuario => usuario.correo === correoGuardado);
 
     if(buscarCorreo){
-        alert(`la contraseña de este correo es: ${buscarCorreo.contrasenia}`);
+        alert(`la contraseña de este correo es: ${buscarCorreo.clave}`);
     }else {
         alert("Correo no encontrado");
     }
