@@ -1,0 +1,16 @@
+section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: aquamarine !important;
+}
+
+
+.padre{
+    background-color: grey;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-content: space-evenly;
+}

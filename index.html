@@ -17,68 +17,141 @@
    />
     <title>Rolling Games</title>
     <link rel="stylesheet" href="css/index.css">
-    
+
 </head>
-<body>
-    <header class="sticky-top">
-        <!--Navbar-->
-        <nav 
-         class="navbar navbar-expand-lg navbar-dark" 
-         style="background-color: var(--background-color-negrito);">
-          <div class="container">
-            <a class="navbar-brand d-flex align-items-center gap-2" href="#"> <img src="./assets/imagenes/logo.png" alt="logo" class="img-logo" ></a>
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarNav"
-              aria-controls="navbarNav"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                <a class="nav-link" href="#">Inicio |</a>
+<body style="font-family: 'Montserrat', sans-serif; line-height: 17px;">
+  <header class="sticky-top">
+<!--Navbar-->
+  <nav 
+  class="navbar navbar-expand-lg navbar-dark" 
+  style="background-color: var(--background-color-negrito);">
+  <div class="container">
+    <a class="navbar-brand" href="#"><img src="./assets/imagenes/logo.png" alt="logo" class="img-logo" ></a>
+
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+            </li>
+            
+<!--el link a la página registro es con Registrarse-->
+
+            <li id="btn-registro"class="nav-item">
+              <a class="nav-link" href="./pages/registro.html">Registrarse</a>
+            </li>
+
+<!-- boton para cerrar sesion -->
+               <li class="nav-item">
+                  <a id="cerrarSesion" class="nav-link " href="#"></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="./pages/contacto.html">Contacto |</a>
+                    <a id="etiqueta" class="nav-link" href="#"></a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="./pages/acerca.html">Acerca de nosotros |</a>
-                </li>
-                <!--el link a la página login es con Ingresar-->
-                <li class="nav-item">
-                  <a class="nav-link" href="./pages/login.html">Ingresar |</a>
-                </li>
-                 <!--el link a la página registro es con Registrarse-->
-                <li class="nav-item">
-                    <a class="nav-link" href="./pages/registro.html">Registrarse</a>
-                  </li>
               </ul>
+          <div>
+<!--el link a la página login es con Ingresar-->
+          <a href="./pages/login.html">
+              <button id= "btn-ingresar" class="btn btn-outline-light">
+               Ingresar
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    </header>
+      <main>
+        <!--Destacados y categorias-->
+        <div class="destacado">
+          <img src="assets/imagenes/destacados y categorias/fifa.png" style="margin: 8vw; margin-right: 50px ; width: 50vw; height: 30vw;">
+          <section class="description1">
+            <h1 style="text-decoration: underline;">Destacado del mes:</h1>
+            <h2>FIFA 23</h2><br>
+            <p>FIFA 23 es un videojuego publicado por Electronic Arts.  Ofrece una experiencia de simulación de fútbol con equipos reales, jugadores, estadios y modos de juego tanto para un solo jugador como para multijugador en línea. </p><br>
+            <p>Categoria: Deportes</p><br>
+            <p>Precio: $4800</p>
+            <button type="button" class="btn btn-success">Ver más</button>
+          </section>
+        </div>
+        <h2 class="categoriastitulo">Otras categorias :</h2>
+        <!--categorias-->
+      <div class="categorias1">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col">
+            <div class="card h-100">
+              <img src="assets/imagenes/destacados y categorias/accion.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Aventura y accion</h5>
+                <p class="card-text">Prepárate para la máxima adrenalina y emoción con nuestra extensa colección de juegos de acción.</p>
+                <button type="button" class="btn btn-success">Ver más</button>
+              </div>
             </div>
           </div>
-        </nav>
-      </header>
-      <main>
-
+          <div class="col">
+            <div class="card h-100">
+              <img src="assets/imagenes/destacados y categorias/estrategia1.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Estrategia</h5>
+                <p class="card-text">Descubre el apasionante mundo de la estrategia y pon a prueba tu ingenio con nuestra amplia selección de juegos de estrategia.</p>
+                <button type="button" class="btn btn-success">Ver más</button>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <img src="assets/imagenes/destacados y categorias/deportes.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Deportes</h5>
+                <p class="card-text">Nuestra colección de juegos de deportes te brinda la oportunidad de vivir la emoción de los deportes más populares.</p>
+                <button type="button" class="btn btn-success">Ver más</button>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <img src="assets/imagenes/destacados y categorias/terror.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Terror</h5>
+                <p class="card-text">Adéntrate en el oscuro y escalofriante mundo de los juegos de terror en nuestra cautivadora categoría.</p>
+                <button type="button" class="btn btn-success">Ver más</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       </main>
       <footer class="footer">
         <div class="container">
           <div class="row align-items-center w-100 justify-contentt-space-bettween  ">
-  <!--Todos los derechos reservados-->
             <div class="col-12 col-md-6 col-lg-6">
+                <!--Acerca de nosostros y Contacto pueden ir en el footer según requerimientos-->
+            
+                <a class="nav-link" href="./pages/contacto.html">Contacto</a>
+  
+  
+                <a class="nav-link" href="./pages/acerca.html">Acerca de nosotros</a>
+             
+                <!--Todos los derechos reservados-->
                 <p class="text-justify">© Copyright 2023 RollingCode School <br>Todos los derechos reservados</p>
             </div>
   <!--REDES SOCIALES-->
             <div class="col-12 col-md-6 col-lg-6">
               <h4 class="footer_title text-center">Redes sociales:</h4>
               <div class="w-100 d-flex justify-content-center gap-2">
-            <a href="./pages/error404.html"><img src="./assets/imagenes/logos redes sociales/instagram.png" alt="instagram" class="img-logo-redes"></a>
-              <a href="./pages/error404.html"><img src="./assets/imagenes/logos redes sociales/facebook.png" alt="facebook" class="img-logo-redes"></a>
-              <a href="./pages/error404.html"><img src="./assets/imagenes/logos redes sociales/youtube.png" alt="youtube" class="img-logo-redes"></a>
+            <a href="#"><img src="./assets/imagenes/logos redes sociales/instagram-1-svgrepo-com.svg" alt="instagram" class="img-logo-redes"></a>
+              <a href="#"><img src="./assets/imagenes/logos redes sociales/facebook-1-svgrepo-com.svg" alt="facebook" class="img-logo-redes"></a>
+              <a href="#"><img src="./assets/imagenes/logos redes sociales/youtube-svgrepo-com.svg" alt="youtube" class="img-logo-redes"></a>
               </div>
             </div>         
           </div>
