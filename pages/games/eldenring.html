@@ -27,52 +27,55 @@
 <body style="font-family: 'Montserrat', sans-serif; line-height: 17px;">
     <header class="sticky-top">
         <!--Navbar-->
-        <nav 
-         class="navbar navbar-expand-lg navbar-dark" 
-         style="background-color: var(--background-color-negrito);">
-          <div class="container">
-            <a class="navbar-brand d-flex align-items-center gap-2" href="/index.html"> <img src="/assets/imagenes/logo.png" alt="logo" class="img-logo" ></a>
-            <button
+    <nav 
+    class="navbar navbar-expand-lg navbar-dark" 
+    style="background-color: var(--background-color-negrito);">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/index.html"><img src="../assets/imagenes/logo.png" alt="logo" class="img-logo" ></a>
+      
+          <button
               class="navbar-toggler"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#navbarNav"
               aria-controls="navbarNav"
               aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
+              aria-label="Toggle navigation">
+              
               <span class="navbar-toggler-icon"></span>
+            
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                <a class="nav-link" href="/index.html">Inicio |</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/pages/contacto.html">Contacto |</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/acerca.html">Acerca de nosotros |</a>
-                </li>
-                <!--el link a la página login es con Ingresar-->
-                <li id= "btn-ingresar" class="nav-item">
-                  <a class="nav-link" href="/pages/login.html">Ingresar |</a>
-                </li>
-                 <!--el link a la página registro es con Registrarse-->
-                <li id="btn-registro" class="nav-item">
-                    <a  class="nav-link" href="/pages/registro.html">Registrarse</a>
-                  </li>
-                  <!-- boton para cerrar sesion -->
-                  <li class="nav-item">
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="../index.html">Inicio</a>
+              </li>
+              
+<!--el link a la página registro es con Registrarse-->
+
+              <li id="btn-registro"class="nav-item">
+                <a class="nav-link" href="./registro.html">Registrarse</a>
+              </li>
+
+<!-- boton para cerrar sesion -->
+                 <li class="nav-item">
                     <a id="cerrarSesion" class="nav-link " href="#"></a>
                   </li>
                   <li class="nav-item">
-                      <a id="etiqueta" class="nav-link" href="/admin.html"></a>
+                      <a id="etiqueta" class="nav-link" href="#"></a>
                   </li>
-              </ul>
+                </ul>
+            <div>
+<!--el link a la página login es con Ingresar-->
+<a href="./login.html">
+  <button id= "btn-ingresar" class="btn btn-outline-light">
+   Ingresar
+  </button>
+</a>
             </div>
           </div>
-        </nav>
+        </div>
+      </nav>
       </header>
     <main>
       <section class="container">
@@ -125,7 +128,7 @@
       </div>
       
     </main>
-   <footer>
+    <footer>
       <div class="left">
                 <a class="nav-link" href="./pages/contacto.html">Contacto</a>
                   <a class="nav-link" href="./pages/acerca.html">Acerca de nosotros</a>
