@@ -76,4 +76,8 @@ function eleccion(e){
 
 //verificacion
 
+let boton = document.getElementById("boton");
+
+
+boton.addEventListener("click",revision);
 

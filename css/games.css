@@ -49,6 +49,9 @@ span {
       line-height: 1.5rem;
 }
 
+.card-text {
+}
+
 .container .tipos {
       display: flex;
       align-items: center;
@@ -77,6 +80,7 @@ span {
       align-items: center;
       justify-content: center;
       gap: 50px;
+      margin-bottom: 50px;
 }
 
 .imagenes img {

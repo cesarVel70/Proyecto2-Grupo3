@@ -16,3 +16,9 @@
         box-shadow: gray 5px 5px 5px;
       }
       /*FIN ACERCA DE NOSOTROS*/
+
+     footer {
+       position: fixed;
+       bottom: 0;
+       width: 100vw;
+     }
