@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (rol === "administrador") {
     // Mostrar el botón de cerrar sesión
     let cerrarSesion = document.getElementById("cerrarSesion");
-    cerrarSesion.innerHTML = "| Cerrar Sesión |";
+    cerrarSesion.innerHTML = "cerrar sesion |";
     let etiqueta = document.getElementById("etiqueta");
     etiqueta.innerHTML = "Administrador";
 
@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (rol === "usuario") {
     // Mostrar el botón de cerrar sesión
     let cerrarSesion = document.getElementById("cerrarSesion");
-    cerrarSesion.innerHTML = "Cerrar Sesión";
+    cerrarSesion.innerHTML = "cerrar sesion";
 
     // ocultamos los botones de ingresar y registrar
     let btnIngresar = document.getElementById("btn-ingresar");
@@ -50,43 +50,46 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-// // creacion de tarjetas automaticamente desde el localStorage
-// let cuerpoCentral = document.getElementById("cuerpoCentral");
+// creacion de tarjetas automaticamente desde el localStorage
+let cuerpoCentral = document.getElementById("cuerpoCentral");
 
-// function actualizarTarjetas() {
-//   cuerpoCentral.innerHTML = "";
+function actualizarTarjetas() {
+      cuerpoCentral.innerHTML = "";
+      let contenido = JSON.parse(localStorage.getItem("juegos"));
 
-//   let contenido = JSON.parse(localStorage.getItem("juegos"));
+  contenido.forEach((element) => {
+    if (element.publicado == "true") {
+      const contenedor = document.createElement("div");
+      const elementoHTML = element.nombre.split(" ").join("").toLowerCase()
+      const card = `
+  <div class="card border-dark mt-4 mb-4" style="width: 18rem">
+            <img
+              src="${element.url}"
+              class="card-img-top"
+              alt="${element.nombre}"
+            />
+            <div class="card-body cardMod">
+              <h5 class="card-title">${element.nombre}</h5>
+              <p class="card-text">
+                ${element.descripcion}
+              </p>
+              <a href="/pages/games/${elementoHTML}.html" class="btn btn-success" target="_blank">Ver mas</a>
+            </div>
+          </div>
+`;
+      contenedor.innerHTML = card;
+      cuerpoCentral.append(contenedor);
+    }
+  });
+}
 
-//   contenido.forEach((element) => {
-//     if (element.publicado == "true") {
-//       const contenedor = document.createElement("div");
-//       const card = `
-// <div class="card border-dark mt-4 mb-4" style="width: 18rem">
-//             <img
-//               src="${element.url}"
-//               class="card-img-top"
-//               alt="NBA 2K23"
-//             />
-//             <div class="card-body cardMod">
-//               <h5 class="card-title">${element.nombre}</h5>
-//               <p class="card-text">
-//                 ${element.descripcion}
-//               </p>
-//               <a href="#" class="btn btn-success">Ver mas..</a>
-//             </div>
-//           </div>
-// `;
-//       contenedor.innerHTML = card;
-//       cuerpoCentral.append(contenedor);
-//     }
-//   });
-// }
+actualizarTarjetas();
 
-// actualizarTarjetas();
+/* este codigo esta pendiente de si el localstorage tuvo cambios, si hubo cambios entonces
+llama a la funcion de actualizarTarjeta*/
+window.addEventListener("storage", () => {
+  actualizarTarjetas();
+});
 
-// /* este codigo esta pendiente de si el localstorage tuvo cambios, si hubo cambios entonces
-// llama a la funcion de actualizarTarjeta*/
-// window.addEventListener("storage", () => {
-//   actualizarTarjetas();
-// });
+
+

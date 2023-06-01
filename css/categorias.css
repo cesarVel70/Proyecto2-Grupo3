@@ -1,54 +1,74 @@
-section {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: aquamarine !important;
-  flex-direction: column;
-  padding: 10px;
-  background: rgb(11, 11, 19);
-  background: linear-gradient(
-    180deg,
-    rgba(11, 11, 19, 1) 0%,
-    rgba(0, 0, 5, 1) 34%,
-    rgba(78, 78, 103, 1) 100%,
-    rgba(0, 212, 255, 1) 100%
-  );
+body {
+      background: linear-gradient(180deg,
+                  rgba(11, 11, 19, 1) 0%,
+                  rgba(0, 0, 5, 1) 34%,
+                  rgba(78, 78, 103, 1) 100%,
+                  rgba(0, 212, 255, 1) 100%);
 }
 
+#cuerpoCentral {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+      gap: 30px;
+      flex-wrap: wrap;
+      z-index: 10;
+      max-width: 1440px;
+      margin-bottom: 40px;
+}
+
+
 h1 {
-  display: inline-block;
+      display: inline-block;
 }
 
 .card-img-top {
-  max-height: 286px;
+      height: 250px;
 }
 
 .cardMod {
-  background-color: rgba(0, 0, 0, 0.748) !important;
-  color: white !important;
+      background-color: var(--background-color-negrito) !important;
+      color: white !important;
+      height: 400px;
 }
 
 .titulo {
-    margin-top: 15px;
-    color: white;
-  padding: 15px;
-  height: 50px;
-  width: 960px;
-  font-size: 30px;
-  background-color: rgba(128, 128, 128, 0.306);
-  text-align: center !important;
-  justify-content: center !important;
-  align-items: center !important;
-  margin-bottom: 5px;
-  border-radius: 20px;
+      margin-top: 15px;
+      color: white;
+      height: 50px;
+      width: 960px;
+      font-size: 30px;
+      background-color: rgba(128, 128, 128, 0.306);
+      text-align: center !important;
+      justify-content: center !important;
+      align-items: center !important;
+      margin-bottom: 5px;
+      border-radius: 20px;
+}
+
+.card-text {
+      color: #ccc;
 }
 
 .padre {
-  background-color: rgba(0, 0, 0, 0.234);
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  justify-content: space-evenly;
-  border-radius: 20px;
+      background-color: rgba(0, 0, 0, 0.234);
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      justify-content: space-evenly;
+      border-radius: 20px;
+}
+
+@media only screen and (max-width: 1440px) {
+      #cuerpoCentral {
+            margin-bottom: 30px
+      }
+}
+
+@media only screen and (max-width: 375px) {
+      #cuerpoCentral {
+            margin-bottom: 20px
+      }
 }
