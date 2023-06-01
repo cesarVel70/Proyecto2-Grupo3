@@ -127,9 +127,10 @@
             <div id="titulo">
               <h1>Contacto</h1>
             </div>
-            <div class="input-group">
+            <div class="input-group" id="grupo_nombre" >
+              
               <input
-                class="form-control mb-3"
+                class="elemento mb-3 formulario-input"
                 type="text"
                 name="nombre"
                 id="nombre"
@@ -137,11 +138,12 @@
                 maxlength="40"
                 minlength="1"
                 required
-              />
+              /><br>
+            
             </div>
-            <div class="input-group">
+            <div class="input-group" id="grupo_apellido">
               <input
-                class="form-control mb-3"
+                class="elemento mb-3 formulario-input"
                 name="apellido"
                 id="apellido"
                 placeholder="apellido"
@@ -151,24 +153,24 @@
                 required
               />
             </div>
-            <div class="input-group">
+            <div class="input-group" id="grupo_email">
               <input
                 type="email"
                 name="email"
                 id="email"
-                class="form-control mb-3"
+                class="elemento mb-3 formulario-input"
                 placeholder="Correo Electronico"
                 minlength="2"
                 maxlength="100"
                 required
               />
             </div>
-            <div class="input-group">
+            <div class="input-group" id="grupo_telefono">
               <input
                 type="tel"
                 name="telefono"
                 id="telefono"
-                class="form-control mb-3"
+                class="elemento mb-3 formulario-input"
                 placeholder="Telefono"
                 minlength="2"
                 maxlength="20"
@@ -212,28 +214,18 @@
                 maxlength="500"
               ></textarea>
 
+            </div><br>
+
+            <div class="formulario__mensaje" id="formulario__mensaje">
+              <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b>  Por favor rellene el formulario correctamente.</p>
             </div>
-            <button class="btn btn-success mt-3 w-50" type="submit" id="boton" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <div class="formulario-btn" id="formulario-btn">
+            <button class="btn btn-success mt-3 w-50" type="submit" id="boton">
               Enviar
-            </button> 
-            
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                    ...
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                  </div>
-                </div>
-              </div>
-            </div>
+            </button>
+            <div>
+            <p class="formulario__mensaje-exito mt-3" id="formulario__mensaje-exito"><b>Formulario enviado exitosamente!</b></p></div>
+          </div>
                   </div>
                 </div>
               </div>

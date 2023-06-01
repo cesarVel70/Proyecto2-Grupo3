@@ -37,11 +37,11 @@
     display: none;
 }
 
-#elemento{
+#elemento, .elemento{
     background-color: var(--background-color-negrito);
     outline: none;
     width: 100%;
-    height: 40px;
+    height: 45px;
     border-radius:5px;
     border: #495057 solid 1px;
     padding: 6px 12px;
@@ -50,6 +50,48 @@
 
 #elemento::placeholder{
     color: #8a9198;
+}
+
+.formulario__mensaje {
+    height: 45px;
+    line-height: 45px;
+    background: #F66060;
+    padding: 0 15px;
+    border-radius: 3px;
+    color: black;
+    display: none;
+}
+
+.formulario__mensaje-activo{
+    display: block;
+}
+
+.formulario__mensaje p {
+    margin: 0;
+}
+
+.formulario__mensaje-exito{
+    height: 45px;
+    line-height: 45px;
+    background: #119200;
+    color: black;
+    padding: 0 15px;
+    border-radius: 3px;
+    display: none;
+}
+
+.formulario__mensaje-exito-activo{
+    display: block;
+} 
+
+.input-group-incorrecto .formulario-input{
+    border: solid 3px #bb2929;
+}
+
+.input-group:focus{
+    outline: none !important;
+    border-color: none !important;
+    box-shadow: none !important;
 }
 
 .padre{

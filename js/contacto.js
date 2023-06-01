@@ -80,32 +80,77 @@ const formulario = document.getElementById("formulario");
 const inputs = document.querySelectorAll("#formulario input");
 
 const expresiones = {
-    usuario: /^[a-zA-Z0-9\_\-]{4,16}$/,
+    apellido: /^[a-zA-ZÀ-ÿ\s]{1,40}$/,
     nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/,
     telefono: /^\d{7,14}$/,
     correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/
 };
 
+const campos = {
+    nombre: false,
+    apellido: false,
+    correo: false,
+    telefono: false
+}
+
 const validarFormulario = (e) => {
     switch (e.target.name){
         case "nombre":
             if(expresiones.nombre.test(e.target.value)){
-
+                document.getElementById('grupo_nombre').classList.remove('input-group-incorrecto');
+                campos['nombre'] = true;
             } else {
-                
+                document.getElementById('grupo_nombre').classList.add('input-group-incorrecto');
+                campos['nombre'] = false;
             }
         break;
         case "apellido":
-            console.log('2');
+            if(expresiones.apellido.test(e.target.value)){
+                document.getElementById('grupo_apellido').classList.remove('input-group-incorrecto');
+                campos['apellido'] = true;
+            } else {
+                document.getElementById('grupo_apellido').classList.add('input-group-incorrecto');
+                campos['apellido'] = false;
+            }
         break;
         case "email":
-            console.log('3');
+            if(expresiones.correo.test(e.target.value)){
+                document.getElementById('grupo_email').classList.remove('input-group-incorrecto');
+                campos['email'] = true;
+            } else {
+                document.getElementById('grupo_email').classList.add('input-group-incorrecto');
+                campos['email'] = false;
+            }
         break;
         case "telefono":
-            console.log('4');
+            if(expresiones.telefono.test(e.target.value)){
+                document.getElementById('grupo_telefono').classList.remove('input-group-incorrecto');
+                campos['telefono'] = true;
+            } else {
+                document.getElementById('grupo_telefono').classList.add('input-group-incorrecto');
+                campos['telefono'] = false;
+            }
         break;
     }
 }
+
+formulario.addEventListener('submit',(e) => {
+
+    if(campos.apellido && campos.email && campos.nombre && campos.telefono){
+        document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
+        setTimeout(() =>{
+            document.getElementById('formulario__mensaje-exito').classList.remove('formulario__mensaje-exito-activo');
+            formulario.submit();
+        }, 5000)
+    }else{
+        document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo')
+        e.preventDefault();
+        setTimeout(() =>{
+            document.getElementById('formulario__mensaje').classList.remove('formulario__mensaje-activo');
+            
+        }, 5000)
+    }
+})
 
 inputs.forEach((input) =>{
     input.addEventListener('keyup', validarFormulario);
