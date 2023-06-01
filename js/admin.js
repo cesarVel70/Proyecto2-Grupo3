@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
       .trim();
     let url = document
       .getElementById("recipient-url")
-      .value.toLowerCase()
+      .value
       .trim();
 
     // Crear un objeto Juego con los datos ingresados
