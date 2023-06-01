@@ -76,8 +76,38 @@ function eleccion(e){
 
 //verificacion
 
-let boton = document.getElementById("boton");
+const formulario = document.getElementById("formulario");
+const inputs = document.querySelectorAll("#formulario input");
 
+const expresiones = {
+    usuario: /^[a-zA-Z0-9\_\-]{4,16}$/,
+    nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/,
+    telefono: /^\d{7,14}$/,
+    correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/
+};
 
-boton.addEventListener("click",revision);
+const validarFormulario = (e) => {
+    switch (e.target.name){
+        case "nombre":
+            if(expresiones.nombre.test(e.target.value)){
 
+            } else {
+                
+            }
+        break;
+        case "apellido":
+            console.log('2');
+        break;
+        case "email":
+            console.log('3');
+        break;
+        case "telefono":
+            console.log('4');
+        break;
+    }
+}
+
+inputs.forEach((input) =>{
+    input.addEventListener('keyup', validarFormulario);
+    input.addEventListener('blur', validarFormulario);
+});
