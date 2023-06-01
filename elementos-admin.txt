@@ -1,0 +1,20 @@
+Titulo: Spider-Man Remastered
+Description: En Marvel’s Spider-Man Remasterizado, la vida de Peter Parker se topa con la de Spider-Man en una historia original repleta de acción. Ponte en la piel de un Peter Parker veterano que ha pulido sus habilidades en la lucha contra el crimen y los villanos en la Nueva York de Marvel.
+IMG: /assets/imagenes/Juegos/Spider_Man.jpg
+
+Titulo: Red Dead Redemption
+Descripcion: América, principios del siglo XX. La era de los vaqueros se acerca a su fin. Cuando unos agentes federales amenazan a su familia, el exforajido John Marston recorre la frontera americana para ayudar a imponer la ley. Vive intensos tiroteos, dramáticos asaltos a trenes, misiones de cazarrecompensas y duelos durante una época de violentos cambios.
+Img: /assets/imagenes/Juegos/Red_Dead_Redemption.jpg
+
+Titulo: Elden Ring
+Descripcion: Elden Ring ofrece vastos parajes de fantasía y sombrías e intricadas mazmorras que están conectadas de forma fluida y sin interrupciones.
+Recorre este impresionante mundo a pie o a caballo, en solitario u online con otros jugadores. Sumérgete en las verdes llanuras, en los pantanos agobiantes, en las montañas tortuosas, en unos castillos que no auguran nada bueno y en otros parajes majestuosos. Todo ello, a una escala nunca antes vista en un juego de FromSoftware.
+img: /assets/imagenes/Juegos/Elden_Ring.jpg
+
+Titulo: Subnautica
+Descripcion: Desciende a las profundidades de un mundo submarino alienígena lleno de belleza y peligros. Crea equipamiento, pilota submarinos, terraforma el terreno, y burla los peligros para explorar exhuberantes arrecifes de coral, volcanes, sistemas de cuevas y más - Todo mientras intentas sobrevivir.
+img: /assets/imagenes/Juegos/Subnautica.jpeg
+
+Titulo: FIFA 23
+Descripcion:  EA SPORTS™ FIFA 23 lleva el juego del mundo al campo con la tecnología HyperMotion2, que ofrece un juego aún más realista, la FIFA World Cup™ masculina y femenina, nuevos equipos femeninos de los clubes, características de juego cruzado y mucho más.
+img: /assets/imagenes/Juegos/FIFA_23.jpeg

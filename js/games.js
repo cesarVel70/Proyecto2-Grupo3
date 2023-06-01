@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (rol === "administrador") {
     // Mostrar el botón de cerrar sesión
     let cerrarSesion = document.getElementById("cerrarSesion");
-    cerrarSesion.innerHTML = "cerrar sesion |";
+    cerrarSesion.innerHTML = "Cerrar Sesión ";
     let etiqueta = document.getElementById("etiqueta");
     etiqueta.innerHTML = "Administrador";
 
@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // Eliminar el rol almacenado en localStorage
       localStorage.removeItem("rol");
       // Redirigir al inicio de sesión
-      window.location.href = "games.html";
+      window.location.href = "/pages/categoria-juegos.html";
     });
   }
 });
@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (rol === "usuario") {
     // Mostrar el botón de cerrar sesión
     let cerrarSesion = document.getElementById("cerrarSesion");
-    cerrarSesion.innerHTML = "cerrar sesion";
+    cerrarSesion.innerHTML = "Cerrar Sesión ";
 
     // ocultamos los botones de ingresar y registrar
     let btnIngresar = document.getElementById("btn-ingresar");
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // Eliminar el rol almacenado en localStorage
       localStorage.removeItem("rol");
       // Redirigir al inicio de sesión
-      window.location.href = "games.html";
+      window.location.href = "/pages/categoria-juegos.html";
     });
   }
 });

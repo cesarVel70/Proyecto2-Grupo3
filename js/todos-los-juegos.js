@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // Eliminar el rol almacenado en localStorage
       localStorage.removeItem("rol");
       // Redirigir al inicio de sesión
-      window.location.href = "index.html";
+      window.location.href = "/index.html";
     });
   }
 });
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // Eliminar el rol almacenado en localStorage
       localStorage.removeItem("rol");
       // Redirigir al inicio de sesión
-      window.location.href = "index.html";
+      window.location.href = "/index.html";
     });
   }
 });
