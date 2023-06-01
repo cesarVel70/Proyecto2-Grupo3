@@ -5,9 +5,12 @@ document.addEventListener("DOMContentLoaded", function () {
   if (rol === "administrador") {
     // Mostrar el botón de cerrar sesión
     let cerrarSesion = document.getElementById("cerrarSesion");
-    cerrarSesion.innerHTML = "Cerrar Sesión";
+    cerrarSesion.innerHTML = "| Cerrar Sesión |";
     let etiqueta = document.getElementById("etiqueta");
     etiqueta.innerHTML = "Administrador";
+     etiqueta.addEventListener("click", () => {
+       window.location.href = "/pages/admin.html";
+     });
 
     // Agregar el evento de clic al botón de cerrar sesión
     cerrarSesion.addEventListener("click", function () {

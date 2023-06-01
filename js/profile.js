@@ -5,10 +5,12 @@ document.addEventListener("DOMContentLoaded", function () {
     if (rol === "administrador") {
         // Mostrar el botón de cerrar sesión
         let cerrarSesion = document.getElementById("cerrarSesion");
-        cerrarSesion.innerHTML = 'cerrar sesion |';
+        cerrarSesion.innerHTML = "| Cerrar Sesión |";
         let etiqueta = document.getElementById("etiqueta")
         etiqueta.innerHTML = 'Administrador';
-
+ etiqueta.addEventListener("click", () => {
+   window.location.href = "/pages/admin.html";
+ });
         // ocultamos los botones de ingresar y registrar
         let btnIngresar = document.getElementById("btn-ingresar"); 
         let btnRegistro = document.getElementById("btn-registro"); 
@@ -33,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (rol === "usuario") {
         // Mostrar el botón de cerrar sesión
         let cerrarSesion = document.getElementById("cerrarSesion");
-        cerrarSesion.innerHTML = 'cerrar sesion';
+        cerrarSesion.innerHTML = "| Cerrar Sesión |";
 
         // ocultamos los botones de ingresar y registrar
         let btnIngresar = document.getElementById("btn-ingresar"); 
